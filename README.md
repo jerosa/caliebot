@@ -2,9 +2,10 @@
 
 A glorious bot dedicated to Caliebristan and our beloved King Caliebre! 
 
-[Twitch](https://www.twitch.tv/caliebre)!
+[Twitch](https://www.twitch.tv/caliebre)
 [Youtube](https://www.youtube.com/channel/UCnFDPboak1dFBoPqN3BbCSw)
 
+[![Travis](https://travis-ci.org/TsunDoge/caliebot.svg)](https://travis-ci.org/TsunDoge/caliebot)
 
 ## Requirements
 

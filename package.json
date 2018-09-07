@@ -1,0 +1,40 @@
+{
+    "name": "caliebot",
+    "version": "1.0.0",
+    "description": "El bot que no merecemos pero necesitamos. ¡Larga vida a la sagrada Caliebristán!",
+    "main": "index.js",
+    "scripts": {
+        "test": "eslint .",
+        "lint": "eslint --fix .",
+        "start": "nodemon index.js"
+    },
+    "keywords": [
+        "bot",
+        "javascript",
+        "discord",
+        "discordjs",
+        "caliebre",
+        "caliebristán",
+        "niñesGuapes"
+    ],
+    "author": "TsunDoge",
+    "license": "MIT",
+    "dependencies": {
+        "discord.js": "github:discordjs/discord.js#85738b68849b6092b8f43a044937dc8a508b7536",
+        "dotenv": "^6.0.0",
+        "fs-nextra": "^0.3.5",
+        "moment": "^2.22.2",
+        "moment-duration-format": "^2.2.2",
+        "node-fetch": "^2.2.0",
+        "pg": "^7.4.3",
+        "pg-hstore": "^2.3.2",
+        "sequelize": "^4.38.0"
+    },
+    "devDependencies": {
+        "eslint": "^4.19.1"
+    },
+    "engines": {
+        "node": "^10.6.0",
+        "npm": "^6.1.0"
+    }
+}
