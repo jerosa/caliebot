@@ -10,6 +10,7 @@ class Owo extends Social {
 			usage: "owo",
 			category: "Fun",
 			cost: 5,
+			cooldown: 10,
 			aliases: ["uwu", "UwU", "OwO"],
 			loadingString: "... OwO whats this? **{{displayName}}**..."
 		});

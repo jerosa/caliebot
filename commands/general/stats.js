@@ -25,7 +25,8 @@ class Stats extends Command {
 • Canales    :: ${this.client.channels.size.toLocaleString()}
 • Discord.js :: v${version}
 • Node       :: ${process.version}\`\`\``)
-			.setColor(message.guild ? message.guild.me.roles.highest.color : 5198940);
+			.setColor(message.guild ? message.guild.me.roles.highest.color : 5198940)
+			.addField("Contacto", `Si necesitas ayuda o quieres sugerir funcionalidades, puedes hablar con ``\`${message.client.appInfo.owner.id}`);
 		message.channel.send({ embed });
 	}
 

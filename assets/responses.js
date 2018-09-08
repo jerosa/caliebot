@@ -8,6 +8,11 @@ exports.goodbyeMessages = [
 	"Hasta la próxima **{{user}}**!"
 ];
 
+exports.ignoreCmd = [
+	"Ignorado papuh **{{user}}**.",
+	"AEAEAEE AEAEA AEAE nop."
+];
+
 // Level Up
 exports.levelUpMessages = [
 ];
