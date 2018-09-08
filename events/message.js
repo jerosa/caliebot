@@ -134,7 +134,7 @@ module.exports = class extends Event {
 	checkRunnable(message) {
 		if (message.author.permLevel > 4) return true;
 
-		const max = 1;
+		const max = 10;
 		const min = 1;
 		const ignore = this.ignore.get(message.author.id) || {};
 		if (!ignore.count) ignore.count = Math.floor(Math.random() * (max - min + 1)) + min;
