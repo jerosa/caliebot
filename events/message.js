@@ -45,7 +45,7 @@ module.exports = class extends Event {
 		const cmd = this.client.commands.get(args.shift().toLowerCase());
 		if (!cmd) return;
 
-		if (this.client.maintenance && this.level < 10) {
+		if (this.client.maintenance && level < 10) {
 			message.channel.send("El bot está en mantenimiento. Disculpa las molestias.");
 			return;
 		}
