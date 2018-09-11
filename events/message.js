@@ -142,11 +142,11 @@ module.exports = class extends Event {
 		const max = 10;
 		const min = 1;
 		const ignore = this.ignore.get(message.author.id) || {};
-		if (!ignore.count) ignore.count = Math.floor(Math.random() * (max - min + 1)) + min;
+		if (!ignore.count) ignore.count = this.client.methods.util.randomInt(max, min);
 		ignore.count--;
 		if (ignore.count === 0) {
 			message.channel.send(`${this.client.responses.ignoreCmd.random().replaceAll("{{user}}", message.author.username)}`);
-			ignore.count = Math.floor(Math.random() * (max - min + 1)) + min;
+			ignore.count = this.client.methods.util.randomInt(max, min);
 			this.ignore.set(message.author.id, ignore);
 			return false;
 		}
