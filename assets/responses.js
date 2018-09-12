@@ -14,7 +14,8 @@ exports.ignoreCmd = [
 	"Ignorado papuh **{{user}}**.",
 	"AEAEAEE AEAEA AEAE nop **{{user}}**.",
 	"¡Un sermón genial **{{user}}**!",
-	"¡Estupendo **{{user}}**!"
+	"¡Estupendo **{{user}}**!",
+	"El bot está en mantenimiento **{{user}}**. En realidad es mentira, simplemente no quiero soportarte, inútil."
 ];
 
 // Level Up

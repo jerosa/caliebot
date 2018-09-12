@@ -27,6 +27,16 @@ class TwitchAPI {
 		return data;
 	}
 
+	static async getGameData(id) {
+		const data = await fetch(`https://api.twitch.tv/helix/games?id=${id}`, {
+			method: "GET",
+			headers: { "Client-ID": TWITCH_TOKEN }
+		})
+			.then(res => res.json())
+			.then(json => json.data[0]);
+		return data;
+	}
+
 }
 
 module.exports = TwitchAPI;
