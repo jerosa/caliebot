@@ -1,16 +1,20 @@
 // Member Join
 exports.welcomeMessages = [
-	"Bienvenido a Caliebristán **{{user}}**."
+	"Bienvenido a Caliebristán **{{user}}**.",
+	"Caliebre needs you **{{user}}**."
 ];
 
 // Member Leave
 exports.goodbyeMessages = [
-	"Hasta la próxima **{{user}}**!"
+	"Hasta la próxima **{{user}}**!",
+	"Considérate excluido **{{user}}**."
 ];
 
 exports.ignoreCmd = [
 	"Ignorado papuh **{{user}}**.",
-	"AEAEAEE AEAEA AEAE nop."
+	"AEAEAEE AEAEA AEAE nop **{{user}}**.",
+	"¡Un sermón genial **{{user}}**!",
+	"¡Estupendo **{{user}}**!"
 ];
 
 // Level Up
@@ -21,7 +25,8 @@ exports.levelUpMessages = [
 exports.pingMessages = [
 	"Ugh, otra vez? Siempre preguntas y ya te he dicho que he respondido en **{{ms}}ms**.",
 	"He tardado en responder **{{ms}}ms**.",
-	"**{{user}}**! Has perdido **{{ms}}ms** de mi tiempo, ERGH."
+	"**{{user}}**! Has perdido **{{ms}}ms** de mi tiempo, ERGH.",
+	"**{{user}}**! He tardado **{{ms}}ms** porque justo estaba en la ducha, te odio muy fuerte"
 ];
 
 exports.myLevelMessages = [
@@ -50,7 +55,8 @@ exports.aboutMessages = [
 
 // System
 exports.rebootMessages = [
-	"{{user}}! Me estoy reiniciando, espera unos instantes.."
+	"{{user}}! Me estoy reiniciando, espera unos instantes..",
+	"¡**{{user}}** pero déjame descansar jueputa!"
 ];
 
 exports.purgeMessages = [
@@ -58,7 +64,8 @@ exports.purgeMessages = [
 ];
 
 exports.muteMessages = [
-	"{{user}}, otra vez? Al rincón de pensar."
+	"{{user}}, otra vez? Al rincón de pensar.",
+	"{{user}} has sido oficialmente oprimido."
 ];
 
 exports.muteImages = [
