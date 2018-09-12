@@ -1,7 +1,7 @@
 // Member Join
 exports.welcomeMessages = [
 	"Bienvenido a Caliebristán **{{user}}**.",
-	"Caliebre needs you **{{user}}**".
+	"Caliebre needs you **{{user}}**."
 ];
 
 // Member Leave
