@@ -75,7 +75,8 @@ exports.muteImages = [
 	"https://i.imgur.com/tThlFXg.png",
 	"https://i.imgur.com/fUMIU31.png",
 	"https://i.imgur.com/XtE26WB.gif",
-	"https://i.imgur.com/eK7jAlQ.jpg"
+	"https://i.imgur.com/eK7jAlQ.jpg",
+	"https://i.imgur.com/jxX7WM7.gif"
 ];
 
 // Reload

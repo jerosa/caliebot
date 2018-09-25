@@ -10,7 +10,7 @@ class HardMute extends Social {
 			extended: "Asinga a un usuario un rol 'silenciado' y lo mueve a un canal de voz sin permisos para hablar en caso de estar en un chat de voz",
 			usage: "hardMute <user>",
 			aliases: ["gulag"],
-			permLevel: "Administrator",
+			permLevel: "Moderator",
 			botPerms: ["MANAGE_ROLES", "MOVE_MEMBERS"],
 			loadingString: "... **{{displayName}}** se está enfadando..."
 		});
@@ -33,8 +33,8 @@ class HardMute extends Social {
 		if (!mutedChannel) return loadingMessage.edit("No se ha encontrado el canal 'muted'.");
 
 		try {
-			await target.roles.add(mutedRole);
 			if (target.voiceChannel) await target.setVoiceChannel(mutedChannel);
+			await target.roles.add(mutedRole);
 			// min and max seconds
 			const max = 2 * 60 * 1000;
 			const min = 1 * 60 * 1000;
