@@ -60,7 +60,7 @@ module.exports = class extends Event {
 
         if (level < this.client.levelCache[cmd.permLevel]) {
             if (message.settings.systemNotice) {
-                const msg = `Eres un nivel ${level}, un ${userPermLevel.name.toLowerCase()}, por qué debería escucharte en vez de a un ${cmd.permLevel} (nivel ${this.client.levelCache[cmd.permLevel]}).`;
+                const msg = `Eres un nivel ${level}, un ${userPermLevel.name.toLowerCase()}, por qué debería escucharte en vez de a un ${cmd.permLevel} (nivel ${this.client.levelCache[cmd.permLevel]}).`; // eslint-disable-line max-len
                 message.channel.send(msg);
             }
             return;
