@@ -1,16 +1,16 @@
 class Util {
 
-	constructor() {
-		throw new Error("This class may not be instantiated.");
-	}
+    constructor() {
+        throw new Error("This class may not be instantiated.");
+    }
 
-	static regExpEsc(str) {
-		return str.replace(Util.REGEXPESC, "\\$&");
-	}
+    static regExpEsc(str) {
+        return str.replace(Util.REGEXPESC, "\\$&");
+    }
 
-	static randomInt(max, min) {
-		return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
+    static randomInt(max, min) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
 }
 

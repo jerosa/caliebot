@@ -1,13 +1,13 @@
 class CustomError extends Error {
 
-	constructor(message, messageToEdit) {
-		super(message);
-		this.msg = messageToEdit;
-	}
+    constructor(message, messageToEdit) {
+        super(message);
+        this.msg = messageToEdit;
+    }
 
-	get name() {
-		return this.constructor.name;
-	}
+    get name() {
+        return this.constructor.name;
+    }
 
 }
 
