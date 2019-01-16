@@ -8,10 +8,10 @@ module.exports = class extends Event {
         if (!channel || !channel.postable) return;
 
         if (settings.welcomeType === "text") {
+            const rulesChannel = member.guild.channels.find("name", settings.rulesChannel);
             const message = this.client.responses.welcomeMessages.random()
                 .replaceAll("{{user}}", member.user.username)
-                .replaceAll("{{amount}}", member.guild.memberCount)
-                .replaceAll("{{guild}}", member.guild.name).trim();
+                .replaceAll("{{rules}}", rulesChannel);
             channel.send(`${message}`).catch(this.console.error);
         }
     }

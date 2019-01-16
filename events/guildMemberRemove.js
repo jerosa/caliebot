@@ -21,7 +21,7 @@ module.exports = class extends Event {
         // Logging
         this.client.emit("customLog", member.guild, "leave", { name: "leave" }, member.user);
         const settings = await this.client.getSettings(member.guild.id);
-        this.welcomeMessage(member, settings);
+        this.leaveMessage(member, settings);
     }
 
 };

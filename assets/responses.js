@@ -1,13 +1,15 @@
 // Member Join
 exports.welcomeMessages = [
-    "Bienvenido a Caliebristán **{{user}}**.",
-    "Caliebre needs you **{{user}}**."
+    "Bienvenido a Caliebristán **{{user}}**. Acuérdate de mirar las **{{rules}}**",
+    "Caliebre needs you **{{user}}**. Echa un vistazo a **{{rules}}**"
 ];
 
 // Member Leave
 exports.goodbyeMessages = [
     "Hasta la próxima **{{user}}**!",
-    "Considérate excluido **{{user}}**."
+    "Considérate excluido **{{user}}**.",
+    "Las liebres no olvidan **{{user}}**.",
+    "F to pay respects to **{{user}}**."
 ];
 
 exports.ignoreCmd = [
