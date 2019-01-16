@@ -44,6 +44,15 @@ module.exports = class extends Event {
             case "msgBulkDelete":
                 channel.send(this.generateEmbed(`❌ \`${data.count}\` Messages Deleted in ${data.channel}`, "#d9534f", { footer: `Bulk Messages Deleted` }));
                 break;
+            case "roleCreate":
+                channel.send(this.generateEmbed(`☑ **${data.role}** (${data.role.id}) role was \`created\``, "#5cb85c", { footer: `Role Created` }));
+                break;
+            case "roleDelete":
+                channel.send(this.generateEmbed(`❌ **${data.role}** (${data.role.id}) role was \`deleted\``, "#d9534f", { footer: `Role Deleted` }));
+                break;
+            case "roleUpdate":
+                channel.send(this.generateEmbed(`🔄 **${data.role}** (${data.role.id}) role was \`updated\``, "#428bca", { footer: `Role Updated` }));
+                break;
             default: break;
         }
     }
