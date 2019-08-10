@@ -42,7 +42,8 @@ const config = {
             name: "User",
             // Don't bother checking, just return true which allows them to execute any command their
             // level allows them to.
-            check: () => true
+            check: () => true,
+            checkId: () => true
         },
 
         // This is your permission level, the staff levels should always be above the rest of the roles.
@@ -65,6 +66,17 @@ const config = {
                 } catch (ex) {
                     return false;
                 }
+            },
+            checkId: (guild, user) => {
+                try {
+                    const modRole = guild.roles.find(role => role.name.toLowerCase() === guild.client.settings.modRole.toLowerCase());
+                    if (modRole) {
+                        return user.roles.has(modRole.id);
+                    }
+                    return false;
+                } catch (ex) {
+                    return false;
+                }
             }
         },
 
@@ -77,6 +89,17 @@ const config = {
                     if (adminRole) {
                         if (target) return target.roles.has(adminRole.id);
                         return message.member.roles.has(adminRole.id);
+                    }
+                    return false;
+                } catch (ex) {
+                    return false;
+                }
+            },
+            checkId: (guild, user) => {
+                try {
+                    const adminRole = guild.roles.find(role => role.name.toLowerCase() === guild.client.settings.adminRole.toLowerCase());
+                    if (adminRole) {
+                        return user.roles.has(adminRole.id);
                     }
                     return false;
                 } catch (ex) {
@@ -96,7 +119,8 @@ const config = {
                     else return message.guild.owner.user.id === message.author.id;
                 }
                 return false;
-            }
+            },
+            checkId: (guild, user) => guild.owner.user.id === user.id
         },
 
         // Bot Support is a special inbetween level that has the equivalent of server owner access
@@ -106,14 +130,16 @@ const config = {
             name: "Bot Support",
             // The check is by reading if an ID is part of this array. Yes, this means you need to
             // change this and reboot the bot to add a support user. Make it better yourself!
-            check: (message, target) => target ? config.admins.includes(target.user.id) : config.support.includes(message.author.id)
+            check: (message, target) => target ? config.support.includes(target.user.id) : config.support.includes(message.author.id),
+            checkId: (guild, user) => config.support.includes(user.id)
         },
 
         // Bot Admin has some limited access like rebooting the bot or reloading commands.
         {
             level: 9,
             name: "Bot Admin",
-            check: (message, target) => target ? config.admins.includes(target.user.id) : config.admins.includes(message.author.id)
+            check: (message, target) => target ? config.admins.includes(target.user.id) : config.admins.includes(message.author.id),
+            checkId: (guild, user) => config.admins.includes(user.id)
         },
 
         // This is the bot owner, this should be the highest permission level available.
@@ -123,7 +149,8 @@ const config = {
             level: 10,
             name: "Bot Owner",
             // Compares the message author id to the one stored in the application page.
-            check: (message, target) => target ? target.user.id === message.client.appInfo.owner.id : message.client.appInfo.owner.id === message.author.id
+            check: (message, target) => target ? target.user.id === message.client.appInfo.owner.id : message.client.appInfo.owner.id === message.author.id,
+            checkId: (guild, user) => user.id === guild.client.appInfo.owner.id
         }
     ]
 };

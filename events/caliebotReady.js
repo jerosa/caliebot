@@ -12,6 +12,7 @@ module.exports = class extends Event {
 
         // Check twitch streamers
         this.client.checkTwitch();
+        this.client.checkSubscriber();
     }
 
 };
