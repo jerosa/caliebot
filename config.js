@@ -67,9 +67,9 @@ const config = {
                     return false;
                 }
             },
-            checkId: (guild, user) => {
+            checkId: (guild, user, settings) => {
                 try {
-                    const modRole = guild.roles.find(role => role.name.toLowerCase() === guild.client.settings.modRole.toLowerCase());
+                    const modRole = guild.roles.find(role => role.name.toLowerCase() === settings.modRole.toLowerCase());
                     if (modRole) {
                         return user.roles.has(modRole.id);
                     }
@@ -95,9 +95,9 @@ const config = {
                     return false;
                 }
             },
-            checkId: (guild, user) => {
+            checkId: (guild, user, settings) => {
                 try {
-                    const adminRole = guild.roles.find(role => role.name.toLowerCase() === guild.client.settings.adminRole.toLowerCase());
+                    const adminRole = guild.roles.find(role => role.name.toLowerCase() === settings.adminRole.toLowerCase());
                     if (adminRole) {
                         return user.roles.has(adminRole.id);
                     }
