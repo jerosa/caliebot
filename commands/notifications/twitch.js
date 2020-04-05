@@ -80,7 +80,7 @@ class Twitch extends Command {
         }
         // check valid twitch login name
         if (/^[a-zA-Z0-9_]{4,25}$/.test(name)) {
-            user = await this.client.methods.twitch.getUserData(name);
+            user = await this.client.methods.twitchApi.getUserData(name);
             if (!user) message.response(undefined, `No se ha encontrado al streamer **${name}**.`);
         } else {
             message.response(undefined, "Nombre de usuario de Twitch inválido. Asegurate de escribir lo que aparece al final de la URL.");

@@ -57,10 +57,10 @@ const config = {
             // If they don't then return false, which will prevent them from executing the command.
             check: (message, target) => {
                 try {
-                    const modRole = message.guild.roles.find(role => role.name.toLowerCase() === message.settings.modRole.toLowerCase());
+                    const modRole = message.guild.roles.cache.find(role => role.name.toLowerCase() === message.settings.modRole.toLowerCase());
                     if (modRole) {
-                        if (target) return target.roles.has(modRole.id);
-                        return message.member.roles.has(modRole.id);
+                        if (target) return target.roles.cache.has(modRole.id);
+                        return message.member.roles.cache.has(modRole.id);
                     }
                     return false;
                 } catch (ex) {
@@ -69,9 +69,9 @@ const config = {
             },
             checkId: (guild, user, settings) => {
                 try {
-                    const modRole = guild.roles.find(role => role.name.toLowerCase() === settings.modRole.toLowerCase());
+                    const modRole = guild.roles.cache.find(role => role.name.toLowerCase() === settings.modRole.toLowerCase());
                     if (modRole) {
-                        return user.roles.has(modRole.id);
+                        return user.roles.cache.has(modRole.id);
                     }
                     return false;
                 } catch (ex) {
@@ -85,10 +85,10 @@ const config = {
             name: "Administrator",
             check: (message, target) => {
                 try {
-                    const adminRole = message.guild.roles.find(role => role.name.toLowerCase() === message.settings.adminRole.toLowerCase());
+                    const adminRole = message.guild.roles.cache.find(role => role.name.toLowerCase() === message.settings.adminRole.toLowerCase());
                     if (adminRole) {
-                        if (target) return target.roles.has(adminRole.id);
-                        return message.member.roles.has(adminRole.id);
+                        if (target) return target.roles.cache.has(adminRole.id);
+                        return message.member.roles.cache.has(adminRole.id);
                     }
                     return false;
                 } catch (ex) {
@@ -97,9 +97,9 @@ const config = {
             },
             checkId: (guild, user, settings) => {
                 try {
-                    const adminRole = guild.roles.find(role => role.name.toLowerCase() === settings.adminRole.toLowerCase());
+                    const adminRole = guild.roles.cache.find(role => role.name.toLowerCase() === settings.adminRole.toLowerCase());
                     if (adminRole) {
-                        return user.roles.has(adminRole.id);
+                        return user.roles.cache.has(adminRole.id);
                     }
                     return false;
                 } catch (ex) {

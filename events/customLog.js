@@ -6,7 +6,7 @@ module.exports = class extends Event {
     async run(guild, type, data, user) {
         const settings = await this.client.getSettings(guild.id);
         if (!settings.logging) return;
-        const channel = guild.channels.find("name", settings.loggingChannel);
+        const channel = guild.channels.cache.find(c => c.name === settings.loggingChannel);
         if (!channel || !channel.postable) return;
         switch (type) {
             case "join":

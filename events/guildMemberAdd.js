@@ -4,15 +4,16 @@ module.exports = class extends Event {
 
     welcomeMessage(member, settings) {
         if (!settings.welcomeEnabled) return;
-        const channel = member.guild.channels.find("name", settings.welcomeChannel);
+        const channel = member.guild.channels.cache.find(c => c.name === settings.welcomeChannel);
         if (!channel || !channel.postable) return;
 
         if (settings.welcomeType === "text") {
-            const rulesChannel = member.guild.channels.find("name", settings.rulesChannel);
+            let rulesChannel = member.guild.channels.cache.find(c => c.name === settings.rulesChannel);
+            if (!rulesChannel) rulesChannel = "No hay canal de reglas!";
             const message = this.client.responses.welcomeMessages.random()
                 .replaceAll("{{user}}", member.user.username)
                 .replaceAll("{{rules}}", rulesChannel);
-            channel.send(`${message}`).catch(this.console.error);
+            channel.send(`${message}`).catch(console.error);
         }
     }
 

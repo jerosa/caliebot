@@ -4,7 +4,7 @@ module.exports = class extends Event {
 
     leaveMessage(member, settings) {
         if (!settings.welcomeEnabled) return;
-        const channel = member.guild.channels.find("name", settings.welcomeChannel);
+        const channel = member.guild.channels.cache.find(c => c.name === settings.welcomeChannel);
         if (!channel || !channel.postable) return;
 
         if (settings.welcomeType === "text") {
@@ -12,7 +12,7 @@ module.exports = class extends Event {
                 .replaceAll("{{user}}", member.user.username)
                 .replaceAll("{{amount}}", member.guild.memberCount)
                 .replaceAll("{{guild}}", member.guild.name).trim();
-            channel.send(`${message}`).catch(this.console.error);
+            channel.send(`${message}`).catch(console.error);
         }
     }
 
@@ -20,8 +20,8 @@ module.exports = class extends Event {
         if (!member || !member.id || !member.guild) return;
         // Logging
         this.client.emit("customLog", member.guild, "leave", { name: "leave" }, member.user);
-        // const settings = await this.client.getSettings(member.guild.id);
-        // this.leaveMessage(member, settings);
+        const settings = await this.client.getSettings(member.guild.id);
+        this.leaveMessage(member, settings);
     }
 
 };

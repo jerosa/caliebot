@@ -20,13 +20,13 @@ class Stats extends Command {
             .setDescription(`\`\`\`asciidoc\n= ESTADÍSTICAS =
 • Uso Mem    :: ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB
 • Uptime     :: ${duration}
-• Usuarios   :: ${this.client.users.size.toLocaleString()}
-• Servidores :: ${this.client.guilds.size.toLocaleString()}
-• Canales    :: ${this.client.channels.size.toLocaleString()}
+• Usuarios   :: ${this.client.users.cache.size.toLocaleString()}
+• Servidores :: ${this.client.guilds.cache.size.toLocaleString()}
+• Canales    :: ${this.client.channels.cache.size.toLocaleString()}
 • Discord.js :: v${version}
 • Node       :: ${process.version}\`\`\``)
             .setColor(message.guild ? message.guild.me.roles.highest.color : 5198940)
-            .addField("Contacto", `Si necesitas ayuda o quieres sugerir funcionalidades, puedes hablar con ``\`${message.client.appInfo.owner.id}`);
+            .addField("Contacto", `Si necesitas ayuda o quieres sugerir funcionalidades, puedes hablar con <@${message.client.appInfo.owner.id}>`);
         message.channel.send({ embed });
     }
 

@@ -1,4 +1,4 @@
-const { MessageEmbed } = require("discord.js");
+const { Collection, MessageEmbed } = require("discord.js");
 const Command = require("../../lib/structures/Command.js");
 const perpage = 10;
 
@@ -30,7 +30,14 @@ class Help extends Command {
 
         if (!type) {
             const description = `Lista de categorías\n\nEscribe \`${message.settings.prefix}help <categoría>\` para encontrar comandos de una categoría específica.`;
-            const output = sorted.filter(c => !(level < 10 && c.category === "Owner") || !(c.category === "NSFW" && !message.channel.nsfw)).map(c => {
+            // NOTE: unable to make filtering using .filter()
+            let output = new Collection();
+            for (const [key, value] of sorted.entries()) {
+                if (!(level < 10 && value.category === "Owner") || !(value.category === "NSFW" && !message.channel.nsfw)) {
+                    output.set(key, value);
+                }
+            }
+            output = output.map(c => {
                 const cat = c.category.toProperCase();
                 if (currentCategory !== cat && !type) {
                     currentCategory = cat;
@@ -38,6 +45,7 @@ class Help extends Command {
                 }
                 return null;
             }).join("");
+
             embed.setDescription(description)
                 .addField("Categorías", output);
         } else if (this.client.commands.has(type)) {
