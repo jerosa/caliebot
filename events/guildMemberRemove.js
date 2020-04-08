@@ -20,8 +20,8 @@ module.exports = class extends Event {
         if (!member || !member.id || !member.guild) return;
         // Logging
         this.client.emit("customLog", member.guild, "leave", { name: "leave" }, member.user);
-        const settings = await this.client.getSettings(member.guild.id);
-        this.leaveMessage(member, settings);
+        // const settings = await this.client.getSettings(member.guild.id);
+        // this.leaveMessage(member, settings);
     }
 
 };
