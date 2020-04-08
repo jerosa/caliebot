@@ -1,7 +1,8 @@
 // Member Join
 exports.welcomeMessages = [
     "Bienvenido a Caliebristán **{{user}}**. Acuérdate de mirar las **{{rules}}**",
-    "Caliebre needs you **{{user}}**. Echa un vistazo a **{{rules}}**"
+    "Caliebre needs you **{{user}}**. Echa un vistazo a **{{rules}}**",
+    "Besos de liebre para **{{user}}**"
 ];
 
 // Member Leave
@@ -18,6 +19,12 @@ exports.ignoreCmd = [
     "¡Un sermón genial **{{user}}**!",
     "¡Estupendo **{{user}}**!",
     "El bot está en mantenimiento **{{user}}**. En realidad es mentira, simplemente no quiero soportarte, inútil."
+];
+
+exports.randomMessage = [
+    "Que quieres pesado",
+    "AEAEAEE AEAEA AEAE",
+    "Te estoy vigilando..."
 ];
 
 // Level Up

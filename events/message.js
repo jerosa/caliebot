@@ -82,7 +82,7 @@ module.exports = class extends Event {
             return null;
         }
         if (message.content.toLowerCase().includes(`caliebot`)) {
-            message.channel.send(`Que quieres pesado.`);
+            message.channel.send(this.client.responses.randomMessage.random());
             return null;
         }
         return message;
