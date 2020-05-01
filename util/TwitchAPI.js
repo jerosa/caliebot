@@ -34,7 +34,7 @@ class TwitchAPI {
         while (data === null && count < 3) {
             data = await fetch(url, {
                 method: "GET",
-                headers: { Authorization: `Bearer ${accessToken}` }
+                headers: { "Client-ID": TWITCH_TOKEN, Authorization: `Bearer ${accessToken}` }
             })
                 .then(res => res.json())
                 .then(async json => {
