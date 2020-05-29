@@ -24,7 +24,17 @@ exports.ignoreCmd = [
 exports.randomMessage = [
     "Que quieres pesado",
     "AEAEAEE AEAEA AEAE",
-    "Te estoy vigilando..."
+    "Te estoy vigilando...",
+    "Fataaaarl",
+    "Ahora no puedo atenderte he quedado con Aitore Robotore",
+    "No te pienso hacer mod, sinvergüenza",
+    "13 cm es muchísimo",
+    "Robotore",
+    "Cuanto carvo y tan pocas luces...",
+    "Me cago en los AEsports",
+    "Sorro que quiereees",
+    "Disculpe mi osadia buen niñe guape, pero vaya presto alli donde no osa asomarse el sol",
+    "No hablo con furries"
 ];
 
 // Level Up
