@@ -34,7 +34,11 @@ exports.randomMessage = [
     "Me cago en los AEsports",
     "Sorro que quiereees",
     "Disculpe mi osadia buen niñe guape, pero vaya presto alli donde no osa asomarse el sol",
-    "No hablo con furries"
+    "No hablo con furries",
+    "A ver cuanto tardas en darte cuenta que te estoy ignorando",
+    "Impostor",
+    "Tremenda pizza que me voy a comer",
+    "Tenes hambre? Veni veni, comete esta que no engorda"
 ];
 
 // Level Up
